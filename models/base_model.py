@@ -4,7 +4,7 @@
 import uuid
 from datetime import date
 
-"""" BaseModel class for util purpose """
+"""" BaseModel class for util purpose."""
 
 
 class BaseModel:
@@ -12,7 +12,11 @@ class BaseModel:
     created_at = date.today()
     updated_at = date.today()
 
+    def __str__(self):
+        pass
+
+
 
 if __name__ == "__main__":
     base_model = BaseModel()
-    print(base_model.created_at)
+   
