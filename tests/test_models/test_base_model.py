@@ -14,7 +14,10 @@ class TestBaseModel(unittest.TestCase):
 
     def test_created_at(self):
         """Testing if date time is created on instances."""
-        self.assertEqual(self.base_model.created_at, datetime.now())
+        self.assertNotEqual(self.base_model.created_at, None)
+
+    def test_uuid_creation(self):
+        self.assertNotEqual(self.base_model.id, '');
 
     def test_save_fun(self):
         """Testing if save function updates updated_at in __dict__."""
