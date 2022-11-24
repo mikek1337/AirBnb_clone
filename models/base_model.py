@@ -2,7 +2,7 @@
 
 
 import uuid
-from datetime import datetime
+from datetime import datetime, date
 
 """" BaseModel class for util purpose."""
 
@@ -11,6 +11,7 @@ class BaseModel:
     """Base module class."""
 
     def __init__(self, *args, **kwargs):
+        """Intalization for BaseModelClass."""
         if kwargs is None or len(kwargs) == 0:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -19,12 +20,13 @@ class BaseModel:
             for x in kwargs.keys():
                 if x != '__class__':
                     if x == "created_at" or x == "updated_at":
-                        self.__dict__[x] = datetime.strptime(kwargs[x],"%Y-%m-%dT%H:%M:%S.%f") 
-                    self.__dict__[x] = kwargs[x]
-
+                        setattr(self, x, datetime.strptime(
+                            kwargs[x], "%Y-%m-%dT%H:%M:%S.%f"))
+                    else:
+                        setattr(self, x, kwargs[x])
 
     def to_dict(self):
-        """Converts datetime to string time format."""
+        """Convert datetime to string time format."""
         copy_dict = dict(self.__dict__)
         copy_dict['__class__'] = self.__class__.__name__
         copy_dict['updated_at'] = self.updated_at.strftime(
@@ -57,3 +59,5 @@ if __name__ == "__main__":
 
     base2 = BaseModel(**dic_json)
     print(base2)
+    print(type(base2.created_at))
+    print(base_model is base2)

@@ -11,18 +11,21 @@ class TestBaseModel(unittest.TestCase):
     def setUp(self):
         """To setup for test case."""
         self.base_model = BaseModel()
+        model_json = self.base_model.to_dict()
+        self.base2 = BaseModel(**model_json)
 
     def test_created_at(self):
         """Testing if date time is created on instances."""
         self.assertNotEqual(self.base_model.created_at, None)
 
     def test_uuid_creation(self):
-        self.assertNotEqual(self.base_model.id, '');
+        """Testing id creation on instances."""
+        self.assertNotEqual(self.base_model.id, '')
 
-    def test_save_fun(self):
-        """Testing if save function updates updated_at in __dict__."""
-        self.base_model.save()
-        self.assertEqual(self.base_model.__dict__['updated_at'], datetime.now())
+    def test_object_similarity(self):
+        """Testing if objects are different."""
+        self.assertEqual(False, (self.base_model is self.base2))
+
 
 
 if __name__ == '__main__':
