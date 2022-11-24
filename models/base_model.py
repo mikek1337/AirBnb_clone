@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
+"""BaseModel class for util purpose."""
+
 
 import uuid
 from datetime import datetime, date
-
-"""" BaseModel class for util purpose."""
 
 
 class BaseModel:
