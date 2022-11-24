@@ -2,7 +2,7 @@
 import unittest
 
 from models.base_model import BaseModel
-from datetime import date
+from datetime import datetime
 
 
 class TestBaseModel(unittest.TestCase):
@@ -14,7 +14,12 @@ class TestBaseModel(unittest.TestCase):
 
     def test_created_at(self):
         """Testing if date time is created on instances."""
-        self.assertEqual(self.base_model.created_at, date.today())
+        self.assertEqual(self.base_model.created_at, datetime.now())
+
+    def test_save_fun(self):
+        """Testing if save function updates updated_at in __dict__."""
+        self.base_model.save()
+        self.assertEqual(self.base_model.__dict__['updated_at'], datetime.now())
 
 
 if __name__ == '__main__':
