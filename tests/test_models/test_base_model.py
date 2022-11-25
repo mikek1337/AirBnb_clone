@@ -27,6 +27,5 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(False, (self.base_model is self.base2))
 
 
-
 if __name__ == '__main__':
     unittest.main()
