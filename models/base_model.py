@@ -5,6 +5,7 @@
 
 import uuid
 from datetime import datetime, date
+from models import storage
 
 
 class BaseModel:
@@ -16,6 +17,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            storage.new(self.to_dict())
         else:
             for x in kwargs.keys():
                 if x != '__class__':
@@ -38,6 +40,7 @@ class BaseModel:
     def save(self):
         """Update update date."""
         self.__dict__['updated_at'] = datetime.now()
+        storage.save()
 
     def __str__(self):
         """Return string format to print."""
@@ -45,19 +48,13 @@ class BaseModel:
 
 
 if __name__ == "__main__":
-    base_model = BaseModel()
-    base_model.name = "mikias"
-    base_model.my_number = 100
-
-    base_model.save()
-
-    dic_json = base_model.to_dict()
-    print(dic_json)
-    for key in dic_json.keys():
-        print("\t{}: ({}) - {}".format(key,
-              type(dic_json[key]), dic_json[key]))
-
-    base2 = BaseModel(**dic_json)
-    print(base2)
-    print(type(base2.created_at))
-    print(base_model is base2)
+    all_objs = storage.all()
+    print("-- Reloaded Objects --")
+    for obj_id in all_objs.keys():
+        obj = all_objs[obj_id]
+        print(obj)
+    new_model = BaseModel()
+    new_model.name = "mikias"
+    new_model.number = 89
+    new_model.save()
+    print(new_model)
