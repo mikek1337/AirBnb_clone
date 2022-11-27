@@ -4,8 +4,8 @@
 
 
 import uuid
-from datetime import datetime, date
-from models import storage
+from datetime import datetime
+import models
 
 
 class BaseModel:
@@ -17,7 +17,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            storage.new(self.to_dict())
+            models.storage.new(self)
         else:
             for x in kwargs.keys():
                 if x != '__class__':
@@ -39,22 +39,17 @@ class BaseModel:
 
     def save(self):
         """Update update date."""
+        
         self.__dict__['updated_at'] = datetime.now()
-        storage.save()
+        models.storage.save()
 
     def __str__(self):
         """Return string format to print."""
         return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
 
-
-if __name__ == "__main__":
-    all_objs = storage.all()
-    print("-- Reloaded Objects --")
-    for obj_id in all_objs.keys():
-        obj = all_objs[obj_id]
-        print(obj)
-    new_model = BaseModel()
-    new_model.name = "mikias"
-    new_model.number = 89
-    new_model.save()
-    print(new_model)
+    def __repr__(self):
+        '''
+            Return string representation of BaseModel class
+        '''
+        return ("[{}] ({}) {}".format(self.__class__.__name__,
+                                      self.id, self.__dict__))
