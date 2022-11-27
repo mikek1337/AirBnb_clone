@@ -1,18 +1,1 @@
-{
-    "BaseModel.9fe27715-35b7-4050-8e40-aa316d86132d": {
-        "id": "9fe27715-35b7-4050-8e40-aa316d86132d",
-        "created_at": "2022-11-26T14:03:21.396093",
-        "updated_at": "2022-11-26T14:03:21.396102",
-        "name": "Mikias",
-        "number": 989,
-        "__class__": "BaseModel"
-    },
-    "BaseModel.faaafa88-5d90-4afa-aea3-acbfb712721e": {
-        "id": "faaafa88-5d90-4afa-aea3-acbfb712721e",
-        "created_at": "2022-11-26T14:05:02.899409",
-        "updated_at": "2022-11-26T14:05:02.899416",
-        "name": "Mikias",
-        "number": 989,
-        "__class__": "BaseModel"
-    }
-}
+{"BaseModel.9fe27715-35b7-4050-8e40-aa316d86132d": {"id": "9fe27715-35b7-4050-8e40-aa316d86132d", "created_at": "2022-11-26T14:03:21.396093", "updated_at": "2022-11-26T14:03:21.396102", "name": "Mikias", "number": 989, "__class__": "BaseModel"}, "BaseModel.faaafa88-5d90-4afa-aea3-acbfb712721e": {"id": "faaafa88-5d90-4afa-aea3-acbfb712721e", "created_at": "2022-11-26T14:05:02.899409", "updated_at": "2022-11-26T14:05:02.899416", "name": "Mikias", "number": 989, "__class__": "BaseModel"}, "BaseModel.61bbe6a7-acef-4ddd-b768-2f4a4f3c83f2": {"id": "61bbe6a7-acef-4ddd-b768-2f4a4f3c83f2", "created_at": "2022-11-27T06:00:22.217822", "updated_at": "2022-11-27T06:00:22.217828", "name": "Mikias", "number": 989, "__class__": "BaseModel"}}
