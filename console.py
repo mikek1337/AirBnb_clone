@@ -3,7 +3,7 @@
 
 import cmd
 from models import BaseModel
-from models import storage
+import models 
 
 
 class HBNBCommand(cmd.Cmd):
@@ -31,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
         try:
             args = line.split(" ")
 
-            new_instance = eval(args[0])()
+            new_instance = eval("models."+args[0])()
             print(line)
             new_instance.save()
             print(new_instance.id)
@@ -48,8 +48,8 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
                 return
             try:
-                objs = storage.all()
-                eval(args[0])
+                objs = models.storage.all()
+                eval("models."+args[0])
                 key = args[0] + "." + args[1]
                 try:
                     value = objs[key]
@@ -66,12 +66,12 @@ class HBNBCommand(cmd.Cmd):
         else:
             args = line.split(" ")
             try:
-                eval(args[0])
-                objs = storage.all()
+                eval("models."+args[0])
+                objs = models.storage.all()
                 key = args[0] + "." + args[1]
                 try:
                     objs.pop(key)
-                    storage.save()
+                    models.storage.save()
                 except KeyError:
                     print("** instance not found. **")
             except NameError:
@@ -80,12 +80,12 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, line):
         """Show's all stored objects"""
         if len(line) == 0:
-            objs = storage.all()
+            objs = models.storage.all()
             print(objs)
         else:
             try:
                 eval(line)
-                objs = storage.all()
+                objs = models.storage.all()
                 found = 0
                 for key, value in objs.items():
                     key_split = key.split(".")
@@ -121,7 +121,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         key = args[0] + "." + args[1]
-        obj_dict = storage.all()
+        obj_dict = models.storage.all()
         try:
             obj_value = obj_dict[key]
         except KeyError:

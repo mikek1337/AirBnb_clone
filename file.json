@@ -1,1 +1,27 @@
-{}
+{
+    "BaseModel.b3d81f89-4bf4-4082-b665-781ddbc9e8f9": {
+        "id": "b3d81f89-4bf4-4082-b665-781ddbc9e8f9",
+        "created_at": "2022-11-28T10:01:19.142152",
+        "updated_at": "2022-11-28T10:01:19.143153",
+        "__class__": "BaseModel"
+    },
+    "User.896dfb77-6b80-4db6-864b-138ac913f717": {
+        "id": "896dfb77-6b80-4db6-864b-138ac913f717",
+        "created_at": "2022-11-28T10:02:08.210941",
+        "updated_at": "2022-11-28T10:03:29.359619",
+        "first_name": "\"mikias\"",
+        "__class__": "User"
+    },
+    "BaseModel.e94accfd-812f-4058-85d9-a68127a0a32d": {
+        "id": "e94accfd-812f-4058-85d9-a68127a0a32d",
+        "created_at": "2022-11-28T10:05:32.440545",
+        "updated_at": "2022-11-28T10:05:32.441543",
+        "__class__": "BaseModel"
+    },
+    "Place.0cd0eaba-0bab-4721-b5b3-eb2f44e4d20e": {
+        "id": "0cd0eaba-0bab-4721-b5b3-eb2f44e4d20e",
+        "created_at": "2022-11-28T10:05:44.634610",
+        "updated_at": "2022-11-28T10:05:44.635614",
+        "__class__": "Place"
+    }
+}
