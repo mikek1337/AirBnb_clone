@@ -13,6 +13,8 @@
 
 ### Step #3
 
-```(hbnb) create BaseModel
+```
+(hbnb) create BaseModel\
 0cd0eaba-0bab-4721-b5b3-eb2f44e4d20e
-(hbnb) ```
+(hbnb) 
+```
