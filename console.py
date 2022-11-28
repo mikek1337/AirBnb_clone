@@ -3,7 +3,7 @@
 
 import cmd
 from models import BaseModel
-import models 
+import models
 
 
 class HBNBCommand(cmd.Cmd):
@@ -30,9 +30,7 @@ class HBNBCommand(cmd.Cmd):
 
         try:
             args = line.split(" ")
-
             new_instance = eval("models."+args[0])()
-            print(line)
             new_instance.save()
             print(new_instance.id)
         except:
@@ -84,7 +82,7 @@ class HBNBCommand(cmd.Cmd):
             print(objs)
         else:
             try:
-                eval(line)
+                eval("models." + line)
                 objs = models.storage.all()
                 found = 0
                 for key, value in objs.items():
@@ -116,7 +114,7 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
             return
         try:
-            eval(args[0])
+            eval("models."+args[0])
         except NameError:
             print("** class doesn't exist **")
             return
