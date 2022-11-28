@@ -4,7 +4,14 @@
 
 ## How it works
 ---
-### Step 1
+### Step #1
 `git clone https://github.com/mikek1337/AirBnb_clone.git`
 
+### Step #2
+
+`python3 console.py`
+
+### Step #3
+
+`(hbnb) create <model_name>`
 
