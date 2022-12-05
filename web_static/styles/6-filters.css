@@ -29,8 +29,6 @@ button:hover{
     border-right: solid 1px #DDDDDD;
     margin-left: 30px;
     float: left;
-    overflow: hidden;
-    white-space: nowrap;
 }
 .amenities{
     text-align: left;
@@ -41,6 +39,7 @@ button:hover{
 
 }
 h3{
+    width: fit-content;
     font-weight: 600;
     margin: 0px;
     margin-top: 17px;
@@ -52,5 +51,32 @@ h4{
     padding: 0px;
     font-weight: 400;
     font-size: 14px;
-    text-overflow: ellipsis "...";   
+   
+}
+.popover{
+    position: absolute; 
+    width: inherit;
+    margin-top: 15px;
+    margin-left: -30px;
+  
+    background-color: #FAFAFA;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    
+
+
+}
+.popover li{
+    list-style: none;
+    list-style-position: inside;
+    margin-left: 50px;
+}
+.popover ul{
+    position: relative;
+    margin-left: 30px
+ 
+}
+
+.popover h2{
+    font-size: 16px;
 }
