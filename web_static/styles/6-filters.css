@@ -38,6 +38,12 @@ button:hover{
     float: left;
 
 }
+.locations:hover ul{
+    display:block;
+}
+.amenities:hover ul{
+    display:block;
+}
 h3{
     width: fit-content;
     font-weight: 600;
@@ -54,11 +60,12 @@ h4{
    
 }
 .popover{
-    position: absolute; 
-    width: inherit;
+    position: relative;
+    display:none;
+    width: 100%;
+    padding:16px;
     margin-top: 15px;
-    margin-left: -30px;
-  
+    margin-left: -30px;  
     background-color: #FAFAFA;
     border: 1px #DDDDDD solid;
     border-radius: 4px;
@@ -69,11 +76,12 @@ h4{
 .popover li{
     list-style: none;
     list-style-position: inside;
-    margin-left: 50px;
+    margin-left: 30px;
 }
 .popover ul{
     position: relative;
-    margin-left: 30px
+    margin-left: 30px;
+    padding-bottom:20px;
  
 }
 
