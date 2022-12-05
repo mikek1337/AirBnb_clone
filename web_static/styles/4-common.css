@@ -4,6 +4,9 @@
     font-family:Circular, "Helvetica Neue",Helvetica,Arial,san-serif;
     color:#484848;
 }
+body{
+    overflow: hidden;
+}
 .container{
     max-width:1000px;
     margin:auto;
